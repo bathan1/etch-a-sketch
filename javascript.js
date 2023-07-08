@@ -30,9 +30,9 @@ function makeSquares(numSquares) {
     const squares = document.querySelectorAll(".flexSquare");
     squares.forEach((square) => {
         // @ts-ignore
-        square.style.width = (960 / numSquares) + "px";
+        square.style.width = (900 / numSquares) + "px";
         // @ts-ignore
-        square.style.height = (960 / numSquares) + "px";
+        square.style.height = (900 / numSquares) + "px";
     });
 
 }

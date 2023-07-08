@@ -1,7 +1,12 @@
+#ui {
+    display:flex;
+    justify-content: space-between;
+}
+
 #grid {
     background-color:white;
-    height: 960px;
-    width: 960px;
+    height: 900px;
+    width: 900px;
     display:flex;
     flex-wrap: wrap;
 }
@@ -9,5 +14,5 @@
 .flexSquare {
     box-sizing: border-box;
     background-color:white;
-    border: 1px solid black;
+    border: 0.5px solid black;
 }
