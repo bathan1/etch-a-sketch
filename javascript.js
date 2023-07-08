@@ -5,16 +5,36 @@ function randomColorGenerator() {
     return Math.floor(Math.random()*16777215).toString(16);
 }
 
-for (let i = 0; i < 16; i++) {
-    boxes[i] = document.createElement('div');
-    boxes[i].className = 'flexSquare';
-    boxes[i].id = 'flexSquare' + (i + 1);
-    boxes[i].addEventListener("mouseover", () => {
-        boxes[i].style.backgroundColor = "#" + randomColorGenerator();
+function makeSquares(numSquares) {
+    for (let i = 0; i < Math.pow(numSquares, 2); i++) {
+        boxes[i] = document.createElement('div');
+        boxes[i].className = 'flexSquare';
+        boxes[i].id = 'flexSquare' + (i + 1);
+        boxes[i].addEventListener("mouseover", () => {
+            boxes[i].style.backgroundColor = "#" + randomColorGenerator();
+    
+            setTimeout( () => {
+                boxes[i].style.backgroundColor = "white";
+            }, 500);
+        });
+        grid.appendChild(boxes[i]);
+    }
 
-        setTimeout( () => {
-            boxes[i].style.backgroundColor = "white";
-        }, 500);
+    const squares = document.querySelectorAll(".flexSquare");
+    squares.forEach((square) => {
+        // @ts-ignore
+        square.style.width = (600 / numSquares) + "px";
+        // @ts-ignore
+        square.style.height = (600 / numSquares) + "px";
     });
-    grid.appendChild(boxes[i]);
+
 }
+
+let numSquares;
+document.getElementById('submitButton').onclick = () => {
+    // @ts-ignore
+    numSquares = document.getElementById("numSquares").value;
+    if (numSquares >= 1 && numSquares <= 100) {
+        makeSquares(numSquares);
+    }
+};
