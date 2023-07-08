@@ -1,0 +1,15 @@
+#grid {
+    background-color:purple;
+    height: 600px;
+    width: 600px;
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.flexSquare {
+    box-sizing: border-box;
+    background-color:white;
+    border: 1px solid black;
+    width: 150px;
+    height: 150px;
+}
