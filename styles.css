@@ -1,12 +1,42 @@
-#ui {
+body {
     display:flex;
-    justify-content: space-between;
+    justify-content:center;
+}
+
+#ui {
+    margin-top: 5vh;
+    display:flex;
+    height:750px;
+    width:650px;
+    border: 50px solid rgb(155, 49, 49);
+    flex-direction:column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#userInputs {
+    background-color:red;
+    box-sizing:border-box;
+    width:650px;
+    height:100px;
+    display:flex;
+}
+
+#inputBox {
+    box-sizing:border-box;
+    background-color:#F6F6F8;
+    padding:5px;
+}
+
+#colorOptions {
+    background-color:blue;
 }
 
 #grid {
     background-color:white;
-    height: 900px;
-    width: 900px;
+    min-height: 650px;
+    min-width: 650px;
+    border:0.5px solid black;
     display:flex;
     flex-wrap: wrap;
 }
