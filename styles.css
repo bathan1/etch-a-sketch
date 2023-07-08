@@ -1,6 +1,7 @@
 body {
     display:flex;
     justify-content:center;
+    font-family: "Cascadia Code", Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #ui {
@@ -30,24 +31,37 @@ body {
     background-color:#F6F6F8;
     padding:5px;
     flex:auto;
-
+    
     display:flex;
     flex-direction:column;
+}
+
+#inputBox>button {
+    font-family: "Cascadia Code", Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #options {
     box-sizing:border-box;
     width:450px;
     height:100px;
-    background-color:#E3E3E3;
+    background-color:#F6F6F8;
+    border-left:2px solid black;
+    
     flex:auto;
 
-    text-align:center;
+    display:flex;
+    flex-direction:column;
+    align-items:strech;
 }
 
-#options > ul {
-    padding:0;
-    list-style: none;
+#options>h3 {
+    margin:0px;
+    align-self:center;
+}
+
+#options>button {
+    flex:1;
+    font-family: "Cascadia Code", Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #grid {
