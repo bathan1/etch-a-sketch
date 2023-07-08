@@ -49,6 +49,8 @@ function makeSquares(numSquares, colorMode) {
 let numSquares;
 let totalSquares;
 document.getElementById('submitButton').onclick = () => {
+    document.getElementById("blackButton").style.backgroundColor = "white";
+    document.getElementById("randomButton").style.backgroundColor = "white";
     // @ts-ignore
     numSquares = document.getElementById("numSquares").value;
     if (numSquares >= 1 && numSquares <= 100) {
@@ -64,10 +66,22 @@ document.getElementById("resetButton").onclick = () => {
     }
 }
 
-document.getElementById("randomButton").onclick = () => {
+const randomButton = document.getElementById("randomButton");
+const blackButton = document.getElementById("blackButton");
+
+randomButton.onclick = () => {
+    if (blackButton.style.backgroundColor == "yellow") {
+        blackButton.style.backgroundColor = "white";
+    }
+
+    document.getElementById("randomButton").style.backgroundColor = "yellow";
     colorMode = "random";
 }
 
-document.getElementById("blackButton").onclick = () => {
+blackButton.onclick = () => {
+    if (randomButton.style.backgroundColor == "yellow") {
+        randomButton.style.backgroundColor = "white";
+    }
+    document.getElementById("blackButton").style.backgroundColor = "yellow";
     colorMode = "black";
 }
