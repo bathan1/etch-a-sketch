@@ -6,6 +6,13 @@ function randomColorGenerator() {
 }
 
 function makeSquares(numSquares) {
+    if (grid.childElementCount != 0) {
+        for (let i = boxes.length - 1; i >= 0; i--) {
+            grid.removeChild(boxes[i]);
+            boxes.splice(i, 1);
+        }
+    }
+
     for (let i = 0; i < Math.pow(numSquares, 2); i++) {
         boxes[i] = document.createElement('div');
         boxes[i].className = 'flexSquare';
@@ -23,9 +30,9 @@ function makeSquares(numSquares) {
     const squares = document.querySelectorAll(".flexSquare");
     squares.forEach((square) => {
         // @ts-ignore
-        square.style.width = (600 / numSquares) + "px";
+        square.style.width = (960 / numSquares) + "px";
         // @ts-ignore
-        square.style.height = (600 / numSquares) + "px";
+        square.style.height = (960 / numSquares) + "px";
     });
 
 }
