@@ -19,10 +19,6 @@ function makeSquares(numSquares) {
         boxes[i].id = 'flexSquare' + (i + 1);
         boxes[i].addEventListener("mouseover", () => {
             boxes[i].style.backgroundColor = "#" + randomColorGenerator();
-    
-            setTimeout( () => {
-                boxes[i].style.backgroundColor = "white";
-            }, 500);
         });
         grid.appendChild(boxes[i]);
     }
@@ -38,10 +34,19 @@ function makeSquares(numSquares) {
 }
 
 let numSquares;
+let totalSquares;
 document.getElementById('submitButton').onclick = () => {
     // @ts-ignore
     numSquares = document.getElementById("numSquares").value;
     if (numSquares >= 1 && numSquares <= 100) {
         makeSquares(numSquares);
+        totalSquares = Math.pow(numSquares, 2);
     }
 };
+
+//@ts-ignore
+document.getElementById("resetButton").onclick = () => {
+    for (let i = 0; i < totalSquares; i++) {
+        boxes[i].style.backgroundColor = "white";
+    }
+}

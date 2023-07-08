@@ -31,6 +31,7 @@ body {
     background-color:#F6F6F8;
     padding:5px;
     flex:auto;
+    font-size: 13px;
     
     display:flex;
     flex-direction:column;
